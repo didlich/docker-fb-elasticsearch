@@ -17,7 +17,6 @@ ENV ES_PLUGIN_MAPPER_ATTACHMENTS_VER 2.7.0
 RUN $ELASTICSEARCH_BIN_DIR/plugin -install com.yakaz.elasticsearch.plugins/elasticsearch-analysis-combo/$ES_PLUGIN_ANALYSIS_COMBO_VER
 RUN $ELASTICSEARCH_BIN_DIR/plugin -install elasticsearch/elasticsearch-mapper-attachments/$ES_PLUGIN_MAPPER_ATTACHMENTS_VER
 
-
 # Add files
 COPY config ./config
 COPY docker-entrypoint.sh /
@@ -30,7 +29,7 @@ VOLUME ["/usr/share/elasticsearch/data"]
 EXPOSE 9200
 EXPOSE 9300
 
-USER nobody
+#USER nobody
 
 # CMD
 ENTRYPOINT ["/docker-entrypoint.sh"]
